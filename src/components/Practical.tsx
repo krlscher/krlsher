@@ -3,6 +3,7 @@ import { Arrow } from "./Arrow";
 import { EyebrowRule } from "./EyebrowRule";
 import { Reveal } from "./Reveal";
 import { ContactForm } from "./ContactForm";
+import { MessengerIcon } from "./MessengerIcon";
 import { getCopy } from "@/lib/i18n";
 import { whatsappUrl, telegramUrl, instagramUrl } from "@/lib/contact";
 import type { Lang } from "@/content/types";
@@ -42,7 +43,10 @@ export function Practical({ lang }: Props) {
                     className="practical__messenger"
                     data-cta-location="practical"
                   >
-                    <span>WhatsApp</span>
+                    <span className="practical__messenger-label">
+                      <MessengerIcon name="whatsapp" />
+                      <span>WhatsApp</span>
+                    </span>
                     <Arrow />
                   </a>
                   <a
@@ -52,7 +56,10 @@ export function Practical({ lang }: Props) {
                     className="practical__messenger"
                     data-cta-location="practical"
                   >
-                    <span>Telegram</span>
+                    <span className="practical__messenger-label">
+                      <MessengerIcon name="telegram" />
+                      <span>Telegram</span>
+                    </span>
                     <Arrow />
                   </a>
                   <a
@@ -62,7 +69,10 @@ export function Practical({ lang }: Props) {
                     className="practical__messenger"
                     data-cta-location="practical"
                   >
-                    <span>Instagram</span>
+                    <span className="practical__messenger-label">
+                      <MessengerIcon name="instagram" />
+                      <span>Instagram</span>
+                    </span>
                     <Arrow />
                   </a>
                 </div>

@@ -2,6 +2,7 @@ import { getCopy, langPath } from "@/lib/i18n";
 import { whatsappUrl, telegramUrl, instagramUrl } from "@/lib/contact";
 import { LangSwitch } from "./LangSwitch";
 import { ThemeToggle } from "./ThemeToggle";
+import { MessengerIcon } from "./MessengerIcon";
 import type { Lang } from "@/content/types";
 
 type Props = { lang: Lang };
@@ -35,18 +36,36 @@ export function Footer({ lang }: Props) {
             <h4>{copy.footer.contactLabel}</h4>
             <ul>
               <li>
-                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                  WhatsApp
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="footer__contact-link"
+                >
+                  <MessengerIcon name="whatsapp" size={16} />
+                  <span>WhatsApp</span>
                 </a>
               </li>
               <li>
-                <a href={telegramUrl} target="_blank" rel="noopener noreferrer">
-                  Telegram
+                <a
+                  href={telegramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="footer__contact-link"
+                >
+                  <MessengerIcon name="telegram" size={16} />
+                  <span>Telegram</span>
                 </a>
               </li>
               <li>
-                <a href={instagramUrl} target="_blank" rel="noopener noreferrer">
-                  Instagram
+                <a
+                  href={instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="footer__contact-link"
+                >
+                  <MessengerIcon name="instagram" size={16} />
+                  <span>Instagram</span>
                 </a>
               </li>
             </ul>
