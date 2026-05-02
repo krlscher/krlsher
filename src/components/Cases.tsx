@@ -4,6 +4,7 @@ import { Reveal } from "./Reveal";
 import { Arrow } from "./Arrow";
 import { cases } from "@/content/cases";
 import { getCopy } from "@/lib/i18n";
+import { instagramUrl } from "@/lib/contact";
 import type { Lang } from "@/content/types";
 
 type Props = { lang: Lang };
@@ -25,7 +26,13 @@ export function Cases({ lang }: Props) {
             <CaseCard key={item.slug} record={item} reversed={i % 2 === 1} lang={lang} />
           ))}
         <div className="cases__all-link">
-          <a href="#cases" className="btn btn--link">
+          <a
+            href={instagramUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn--link"
+            data-cta-location="cases"
+          >
             {c.all} <Arrow />
           </a>
         </div>

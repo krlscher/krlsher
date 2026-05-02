@@ -53,8 +53,8 @@ export const copyEN: Copy = {
   cases: {
     eyebrow: "CLINICAL CASES",
     h2: "Selected work, structured.",
-    all: "All cases",
-    viewFull: "View full case",
+    all: "More on Instagram",
+    viewFull: "More on Instagram",
     blockLabels: {
       patient: "The patient",
       decision: "The decision",
@@ -111,12 +111,5 @@ export const copyEN: Copy = {
     contactLabel: "CONTACT",
     bottomLeft: "© 2026 — License №XXXXX",
     bottomRight: "UA · EN",
-  },
-  caseDetail: {
-    backToAll: "All cases",
-    nextCase: "Next case",
-    prevCase: "Previous case",
-    galleryLabel: "GALLERY",
-    galleryStages: ["CT", "PLAN", "SURGERY", "RESULT"],
   },
 };

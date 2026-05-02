@@ -65,13 +65,6 @@ export type Copy = {
     bottomLeft: string;
     bottomRight: string;
   };
-  caseDetail: {
-    backToAll: string;
-    nextCase: string;
-    prevCase: string;
-    galleryLabel: string;
-    galleryStages: string[];
-  };
 };
 
 export type LocalizedString = { ua: string; en: string };
@@ -92,5 +85,4 @@ export type CaseRecord = {
   outcome: LocalizedString;
   heroImage: string;
   heroImageAlt: LocalizedString;
-  gallery: { src: string; alt: LocalizedString }[];
 };

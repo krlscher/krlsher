@@ -29,12 +29,6 @@ export const cases: CaseRecord[] = [
       ua: "Цирконієвий міст на нейтральному фоні",
       en: "Zirconia bridge on neutral surface",
     },
-    gallery: [
-      { src: "/images/cases/full-arch/01-ct.jpg", alt: { ua: "КТ — вихідний стан", en: "CT — initial state" } },
-      { src: "/images/cases/full-arch/02-plan.jpg", alt: { ua: "Цифрове планування", en: "Digital plan" } },
-      { src: "/images/cases/full-arch/03-surgery.jpg", alt: { ua: "Хірургічний етап", en: "Surgical stage" } },
-      { src: "/images/cases/full-arch/04-final.jpg", alt: { ua: "Фінальний результат", en: "Final result" } },
-    ],
   },
   {
     slug: "anterior-implant",
@@ -64,12 +58,6 @@ export const cases: CaseRecord[] = [
       ua: "Цифровий план імпланта в естетичній зоні",
       en: "Digital plan — implant in aesthetic zone",
     },
-    gallery: [
-      { src: "/images/cases/anterior-implant/01-ct.jpg", alt: { ua: "КТ — оцінка кістки", en: "CT — bone assessment" } },
-      { src: "/images/cases/anterior-implant/02-plan.jpg", alt: { ua: "Планування позиції", en: "Position planning" } },
-      { src: "/images/cases/anterior-implant/03-surgery.jpg", alt: { ua: "Етап хірургії", en: "Surgical stage" } },
-      { src: "/images/cases/anterior-implant/04-final.jpg", alt: { ua: "Керамічна коронка", en: "Ceramic crown" } },
-    ],
   },
   {
     slug: "full-rehab",
@@ -99,12 +87,6 @@ export const cases: CaseRecord[] = [
       ua: "Керамічна реабілітація на артикуляторі",
       en: "Ceramic set on articulator",
     },
-    gallery: [
-      { src: "/images/cases/full-rehab/01-ct.jpg", alt: { ua: "Аналіз прикусу", en: "Occlusal analysis" } },
-      { src: "/images/cases/full-rehab/02-plan.jpg", alt: { ua: "Цифровий план", en: "Digital plan" } },
-      { src: "/images/cases/full-rehab/03-surgery.jpg", alt: { ua: "Тимчасова конструкція", en: "Provisional stage" } },
-      { src: "/images/cases/full-rehab/04-final.jpg", alt: { ua: "Постійна реабілітація", en: "Final rehab" } },
-    ],
   },
   {
     slug: "veneers",
@@ -134,12 +116,6 @@ export const cases: CaseRecord[] = [
       ua: "Етап mock-up для вінірів",
       en: "Veneers — mock-up stage",
     },
-    gallery: [
-      { src: "/images/cases/veneers/01-ct.jpg", alt: { ua: "Початкова фотопротокол", en: "Initial photo protocol" } },
-      { src: "/images/cases/veneers/02-plan.jpg", alt: { ua: "Цифровий mock-up", en: "Digital mock-up" } },
-      { src: "/images/cases/veneers/03-surgery.jpg", alt: { ua: "Препарація", en: "Preparation" } },
-      { src: "/images/cases/veneers/04-final.jpg", alt: { ua: "Фінальний результат", en: "Final result" } },
-    ],
   },
 ];
 

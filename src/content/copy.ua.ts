@@ -53,8 +53,8 @@ export const copyUA: Copy = {
   cases: {
     eyebrow: "КЛІНІЧНІ КЕЙСИ",
     h2: "Обрані роботи. Зі структурою.",
-    all: "Всі кейси",
-    viewFull: "Дивитись повний кейс",
+    all: "Більше у Instagram",
+    viewFull: "Більше у Instagram",
     blockLabels: {
       patient: "Пацієнт",
       decision: "Рішення",
@@ -111,12 +111,5 @@ export const copyUA: Copy = {
     contactLabel: "ЗВ'ЯЗОК",
     bottomLeft: "© 2026 — Ліцензія №XXXXX",
     bottomRight: "UA · EN",
-  },
-  caseDetail: {
-    backToAll: "Усі кейси",
-    nextCase: "Наступний кейс",
-    prevCase: "Попередній кейс",
-    galleryLabel: "ГАЛЕРЕЯ",
-    galleryStages: ["КТ", "ПЛАН", "ХІРУРГІЯ", "РЕЗУЛЬТАТ"],
   },
 };
