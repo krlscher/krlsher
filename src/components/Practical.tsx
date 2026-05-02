@@ -39,28 +39,31 @@ export function Practical({ lang }: Props) {
                     href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn btn--link"
+                    className="practical__messenger"
                     data-cta-location="practical"
                   >
-                    WhatsApp <Arrow />
+                    <span>WhatsApp</span>
+                    <Arrow />
                   </a>
                   <a
                     href={telegramUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn btn--link"
+                    className="practical__messenger"
                     data-cta-location="practical"
                   >
-                    Telegram <Arrow />
+                    <span>Telegram</span>
+                    <Arrow />
                   </a>
                   <a
                     href={instagramUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn btn--link"
+                    className="practical__messenger"
                     data-cta-location="practical"
                   >
-                    Instagram <Arrow />
+                    <span>Instagram</span>
+                    <Arrow />
                   </a>
                 </div>
               </Reveal>

@@ -55,7 +55,11 @@ export function ContactForm({ lang }: Props) {
         <span className="contact-form__label">{f.message}</span>
         <textarea name="message" required minLength={5} maxLength={2000} rows={3} />
       </label>
-      <button type="submit" className="btn btn--primary" disabled={status === "submitting"}>
+      <button
+        type="submit"
+        className="btn btn--primary btn--lg contact-form__submit"
+        disabled={status === "submitting"}
+      >
         {f.submit}
         <Arrow />
       </button>

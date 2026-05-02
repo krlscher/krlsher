@@ -770,7 +770,40 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: var(--space-2);
 }
 .practical__item p { margin: 0; line-height: 1.55; }
-.practical__links { display: flex; flex-direction: column; gap: var(--space-2); }
+.practical__links {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--hairline);
+  margin-top: var(--space-2);
+}
+.practical__messenger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-2);
+  border-bottom: 1px solid var(--hairline);
+  font-family: var(--font-sans);
+  font-size: 19px;
+  font-weight: 400;
+  color: var(--text);
+  text-decoration: none;
+  transition: color 200ms ease, padding-left 200ms ease, background 200ms ease;
+}
+.practical__messenger .btn__arrow {
+  width: 16px;
+  height: 16px;
+  transition: transform 200ms ease;
+}
+.practical__messenger:hover {
+  color: var(--accent-olive);
+  padding-left: var(--space-3);
+  background: color-mix(in srgb, var(--accent-olive) 6%, transparent);
+}
+.practical__messenger:hover .btn__arrow { transform: translateX(4px); }
+.practical__messenger:focus-visible {
+  outline: 1px solid var(--accent-olive);
+  outline-offset: -1px;
+}
 .practical__media { width: 100%; aspect-ratio: 5/4; }
 
 @media (max-width: 1023px) {
@@ -943,54 +976,74 @@ a { color: inherit; text-decoration: none; }
 @keyframes heroImg { to { opacity: 1; } }
 
 /* ==========================================================================
-   Contact form (subordinate to messenger CTAs)
+   Contact form — visible inputs, prominent submit
    ========================================================================== */
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
-  max-width: 420px;
+  gap: var(--space-4);
+  max-width: 480px;
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--hairline);
 }
 .contact-form__field { display: flex; flex-direction: column; gap: var(--space-2); }
 .contact-form__label {
-  font-size: 12px;
-  letter-spacing: 0.15em;
+  font-size: 11px;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--accent-olive);
   font-weight: 500;
 }
 .contact-form input,
 .contact-form textarea {
   font-family: var(--font-sans);
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.5;
   color: var(--text);
-  background: transparent;
-  border: 0;
-  border-bottom: 1px solid var(--hairline);
-  border-radius: 0;
-  padding: var(--space-2) 0;
-  transition: border-color 200ms ease;
+  background: var(--bg-alt);
+  border: 1px solid var(--hairline);
+  border-radius: 2px;
+  padding: 14px 16px;
+  transition: border-color 200ms ease, background 200ms ease;
   width: 100%;
   resize: vertical;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder { color: var(--text-soft); }
+.contact-form input:hover,
+.contact-form textarea:hover {
+  border-color: color-mix(in srgb, var(--text) 35%, var(--hairline));
 }
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  border-bottom-color: var(--text);
+  border-color: var(--accent-navy);
+  background: var(--bg);
 }
-.contact-form textarea { min-height: 72px; font-family: var(--font-serif); font-size: 17px; }
-.contact-form .btn { align-self: flex-start; margin-top: var(--space-3); }
+.contact-form textarea {
+  min-height: 96px;
+  font-family: var(--font-serif);
+  font-size: 18px;
+  line-height: 1.55;
+}
+.contact-form__submit {
+  align-self: stretch;
+  justify-content: space-between;
+  margin-top: var(--space-3);
+}
 .contact-form__notice {
   font-family: var(--font-serif);
-  font-size: 17px;
+  font-size: 18px;
   color: var(--text-muted);
   margin: 0;
-  padding-top: var(--space-3);
+  padding: var(--space-5) var(--space-5);
+  border: 1px solid var(--hairline);
+  border-radius: 2px;
+  background: var(--bg-alt);
 }
 .contact-form__notice--error { color: var(--accent-olive-deep); }
-.practical__item--form { margin-top: var(--space-3); }
+.practical__item--form { margin-top: var(--space-5); }
 
 /* ==========================================================================
    Footer language switch
