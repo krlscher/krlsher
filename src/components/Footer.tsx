@@ -1,6 +1,7 @@
 import { getCopy, langPath } from "@/lib/i18n";
 import { whatsappUrl, telegramUrl, instagramUrl } from "@/lib/contact";
 import { LangSwitch } from "./LangSwitch";
+import { ThemeToggle } from "./ThemeToggle";
 import type { Lang } from "@/content/types";
 
 type Props = { lang: Lang };
@@ -53,7 +54,10 @@ export function Footer({ lang }: Props) {
         </div>
         <div className="footer__bottom">
           <span>{copy.footer.bottomLeft}</span>
-          <LangSwitch lang={lang} className="footer__lang" />
+          <div className="footer__bottom-controls">
+            <ThemeToggle lang={lang} />
+            <LangSwitch lang={lang} className="footer__lang" />
+          </div>
         </div>
       </div>
     </footer>

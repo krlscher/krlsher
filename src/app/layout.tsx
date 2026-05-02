@@ -3,6 +3,7 @@ import { Inter, Cormorant_Garamond } from "next/font/google";
 import Script from "next/script";
 import "@/styles/globals.css";
 import { SITE } from "@/lib/site";
+import { ThemeScript } from "@/components/ThemeScript";
 
 const inter = Inter({
   subsets: ["latin", "cyrillic", "latin-ext"],
@@ -20,7 +21,10 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#FAFAF7",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#FAFAF7" },
+    { media: "(prefers-color-scheme: dark)", color: "#14140F" },
+  ],
   width: "device-width",
   initialScale: 1,
 };
@@ -54,7 +58,14 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const plausibleDomain = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN;
   return (
-    <html lang="uk" className={`${inter.variable} ${cormorant.variable}`}>
+    <html
+      lang="uk"
+      className={`${inter.variable} ${cormorant.variable}`}
+      suppressHydrationWarning
+    >
+      <head>
+        <ThemeScript />
+      </head>
       <body>
         {children}
         {plausibleDomain ? (

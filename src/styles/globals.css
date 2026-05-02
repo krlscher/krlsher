@@ -41,6 +41,25 @@
   --gutter: 24px;
   --side-margin: 120px;
   --nav-h: 72px;
+
+  color-scheme: light;
+}
+
+[data-theme="light"] { color-scheme: light; }
+
+[data-theme="dark"] {
+  --bg:                #14140F;
+  --bg-alt:            #1B1B15;
+  --text:              #EDECE4;
+  --text-muted:        #9A9A91;
+  --text-soft:         #6B6B62;
+  --accent-olive:      #8E906A;
+  --accent-olive-deep: #B0B286;
+  --accent-navy:       #4C5A78;
+  --accent-navy-deep:  #6B7A98;
+  --hairline:          #2D2D26;
+
+  color-scheme: dark;
 }
 
 @media (max-width: 1439px) and (min-width: 1024px) {
@@ -215,10 +234,11 @@ a { color: inherit; text-decoration: none; }
   top: 0;
   z-index: 50;
   height: var(--nav-h);
-  background: rgba(250, 250, 247, 0.85);
+  background: var(--bg);
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  transition: border-color 250ms ease, box-shadow 250ms ease;
+  transition: background 250ms ease, border-color 250ms ease, box-shadow 250ms ease;
   border-bottom: 1px solid transparent;
 }
 .nav.is-scrolled {
@@ -289,6 +309,31 @@ a { color: inherit; text-decoration: none; }
 .nav__lang a.is-active,
 .nav__lang button.is-active { color: var(--text); }
 .nav__lang span { color: var(--text-soft); }
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  color: var(--text-soft);
+}
+.theme-toggle button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  color: inherit;
+  border-radius: 2px;
+  transition: color 200ms ease, background 200ms ease;
+}
+.theme-toggle button:hover { color: var(--text); }
+.theme-toggle button.is-active {
+  color: var(--text);
+  background: color-mix(in srgb, var(--text) 8%, transparent);
+}
+.theme-toggle button:focus-visible {
+  outline: 1px solid var(--accent-olive);
+  outline-offset: 1px;
+}
 
 .nav__hamburger { display: none; width: 32px; height: 32px; position: relative; }
 .nav__hamburger span { position: absolute; left: 6px; right: 6px; height: 1px; background: var(--text); transition: transform 250ms ease, opacity 200ms ease; }
@@ -791,6 +836,11 @@ a { color: inherit; text-decoration: none; }
   display: flex; justify-content: space-between; align-items: center;
   padding-top: var(--space-5); border-top: 1px solid var(--hairline);
   font-size: 13px; color: var(--text-soft); letter-spacing: 0.02em;
+}
+.footer__bottom-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
 }
 
 @media (max-width: 767px) {

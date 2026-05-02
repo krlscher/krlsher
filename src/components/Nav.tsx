@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { getCopy, langPath } from "@/lib/i18n";
 import { LangSwitch } from "./LangSwitch";
+import { ThemeToggle } from "./ThemeToggle";
 import type { Lang } from "@/content/types";
 
 type Props = { lang: Lang };
@@ -50,6 +51,7 @@ export function Nav({ lang }: Props) {
             ))}
           </ul>
           <div className="nav__right">
+            <ThemeToggle lang={lang} />
             <LangSwitch lang={lang} />
             <button
               className="nav__hamburger"
