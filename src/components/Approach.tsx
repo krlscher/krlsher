@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { EyebrowRule } from "./EyebrowRule";
 import { Reveal } from "./Reveal";
+import { ImageZoom } from "./ImageZoom";
 import { getCopy } from "@/lib/i18n";
 import type { Lang } from "@/content/types";
 
@@ -14,15 +14,11 @@ export function Approach({ lang }: Props) {
       <div className="container">
         <div className="approach__grid">
           <Reveal className="approach__media">
-            <div style={{ position: "relative", width: "100%", height: "100%" }}>
-              <Image
-                src="/images/approach/cbct.jpg"
-                alt={a.mediaAlt}
-                fill
-                sizes="(max-width: 1023px) 100vw, 50vw"
-                style={{ objectFit: "cover" }}
-              />
-            </div>
+            <ImageZoom
+              src="/images/approach/cbct.jpg"
+              alt={a.mediaAlt}
+              sizes="(max-width: 1023px) 100vw, 50vw"
+            />
           </Reveal>
           <div>
             <Reveal>

@@ -29,6 +29,24 @@ export const cases: CaseRecord[] = [
       ua: "Цирконієва конструкція на титановій балці",
       en: "Zirconia construction on a titanium bar",
     },
+    stages: [
+      {
+        src: "/images/cases/full-arch-implants/stage-1.jpg",
+        alt: { ua: "До лікування — старі мостоподібні конструкції", en: "Before treatment — old bridges in place" },
+      },
+      {
+        src: "/images/cases/full-arch-implants/stage-2.jpg",
+        alt: { ua: "Етап лікування — фрагмент 1", en: "Treatment stage — fragment 1" },
+      },
+      {
+        src: "/images/cases/full-arch-implants/stage-3.jpg",
+        alt: { ua: "Етап лікування — фрагмент 2", en: "Treatment stage — fragment 2" },
+      },
+      {
+        src: "/images/cases/full-arch-implants/stage-4.jpg",
+        alt: { ua: "Етап лікування — фрагмент 3", en: "Treatment stage — fragment 3" },
+      },
+    ],
   },
   {
     slug: "ceramic-veneers",
@@ -58,6 +76,16 @@ export const cases: CaseRecord[] = [
       ua: "Керамічні вініри у фронтальній ділянці",
       en: "Ceramic veneers in the anterior segment",
     },
+    stages: [
+      {
+        src: "/images/cases/ceramic-veneers/stage-1.jpg",
+        alt: { ua: "До лікування — старі пломби у фронтальній ділянці", en: "Before treatment — old fillings in the anterior segment" },
+      },
+      {
+        src: "/images/cases/ceramic-veneers/stage-2.jpg",
+        alt: { ua: "Етап лікування — керамічні вініри після фіксації", en: "Treatment stage — ceramic veneers after bonding" },
+      },
+    ],
   },
   {
     slug: "posterior-implants",
@@ -87,6 +115,20 @@ export const cases: CaseRecord[] = [
       ua: "Коронки на імплантах у боковому відділі",
       en: "Implant-supported crowns in the posterior segment",
     },
+    stages: [
+      {
+        src: "/images/cases/posterior-implants/stage-1.jpg",
+        alt: { ua: "До лікування — відсутність жувальних зубів", en: "Before treatment — missing chewing teeth" },
+      },
+      {
+        src: "/images/cases/posterior-implants/stage-2.jpg",
+        alt: { ua: "Етап лікування — встановлені імпланти", en: "Treatment stage — implants placed" },
+      },
+      {
+        src: "/images/cases/posterior-implants/stage-3.jpg",
+        alt: { ua: "Етап лікування — фіксація коронок", en: "Treatment stage — crowns bonded" },
+      },
+    ],
   },
   {
     slug: "smile-rehab",
@@ -116,6 +158,20 @@ export const cases: CaseRecord[] = [
       ua: "Керамічна реабілітація усмішки — фронтальний вигляд",
       en: "Ceramic smile rehabilitation — frontal view",
     },
+    stages: [
+      {
+        src: "/images/cases/smile-rehab/stage-1.jpg",
+        alt: { ua: "До лікування — міжзубні проміжки у зоні усмішки", en: "Before treatment — interdental gaps in the smile zone" },
+      },
+      {
+        src: "/images/cases/smile-rehab/stage-2.jpg",
+        alt: { ua: "Етап лікування — примірка mock-up", en: "Treatment stage — mock-up try-in" },
+      },
+      {
+        src: "/images/cases/smile-rehab/stage-3.jpg",
+        alt: { ua: "Етап лікування — фіксація керамічних реставрацій", en: "Treatment stage — ceramic restorations bonded" },
+      },
+    ],
   },
 ];
 

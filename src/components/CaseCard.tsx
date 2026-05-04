@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { Arrow } from "./Arrow";
 import { Reveal } from "./Reveal";
+import { ImageZoom } from "./ImageZoom";
 import { getCopy, localized } from "@/lib/i18n";
 import { instagramUrl } from "@/lib/contact";
 import type { CaseRecord, Lang } from "@/content/types";
@@ -18,16 +18,28 @@ export function CaseCard({ record, reversed, lang }: Props) {
     <Reveal className={"case-card" + (reversed ? " case-card--reversed" : "")}>
       <div className="case-card__media-col">
         <div className="case-card__media">
-          <div className="case-card__media-inner" style={{ position: "relative", width: "100%", height: "100%" }}>
-            <Image
-              src={record.heroImage}
-              alt={localized(record.heroImageAlt, lang)}
-              fill
-              sizes="(max-width: 1023px) 100vw, 60vw"
-              style={{ objectFit: "cover" }}
-            />
-          </div>
+          <ImageZoom
+            src={record.heroImage}
+            alt={localized(record.heroImageAlt, lang)}
+            sizes="(max-width: 1023px) 100vw, 60vw"
+          />
         </div>
+        {record.stages.length > 0 && (
+          <div
+            className="case-card__stages"
+            style={{ gridTemplateColumns: `repeat(${record.stages.length}, 1fr)` }}
+          >
+            {record.stages.map((stage) => (
+              <div key={stage.src} className="case-card__stage">
+                <ImageZoom
+                  src={stage.src}
+                  alt={localized(stage.alt, lang)}
+                  sizes="(max-width: 1023px) 25vw, 15vw"
+                />
+              </div>
+            ))}
+          </div>
+        )}
       </div>
       <div className="case-card__body">
         <div className="t-eyebrow case-card__tag">{localized(record.tag, lang)}</div>

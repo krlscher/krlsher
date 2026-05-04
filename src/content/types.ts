@@ -76,6 +76,11 @@ export type FaqItem = {
   answer: LocalizedString;
 };
 
+export type CaseStage = {
+  src: string;
+  alt: LocalizedString;
+};
+
 export type CaseRecord = {
   slug: string;
   order: number;
@@ -86,4 +91,5 @@ export type CaseRecord = {
   outcome: LocalizedString;
   heroImage: string;
   heroImageAlt: LocalizedString;
+  stages: CaseStage[];
 };
