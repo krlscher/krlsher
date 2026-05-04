@@ -816,6 +816,7 @@ a { color: inherit; text-decoration: none; }
   outline-offset: -1px;
 }
 .practical__media { width: 100%; aspect-ratio: 5/4; }
+.practical__grid--single { grid-template-columns: minmax(0, 640px); justify-content: start; }
 
 @media (max-width: 1023px) {
   .practical__grid { grid-template-columns: 1fr; }

@@ -10,13 +10,20 @@ import type { Lang } from "@/content/types";
 
 type Props = { lang: Lang };
 
+// Flip to true once the studio photo at /public/images/practical/studio.jpg is in place.
+const HAS_STUDIO_PHOTO = false;
+
 export function Practical({ lang }: Props) {
   const p = getCopy(lang).practical;
 
   return (
     <section className="section section--practical" id="contact">
       <div className="container">
-        <div className="practical__grid">
+        <div
+          className={
+            HAS_STUDIO_PHOTO ? "practical__grid" : "practical__grid practical__grid--single"
+          }
+        >
           <div>
             <Reveal>
               <EyebrowRule>{p.eyebrow}</EyebrowRule>
@@ -83,17 +90,19 @@ export function Practical({ lang }: Props) {
               </Reveal>
             </div>
           </div>
-          <Reveal className="practical__media">
-            <div style={{ position: "relative", width: "100%", height: "100%" }}>
-              <Image
-                src="/images/practical/studio.jpg"
-                alt={p.mediaAlt}
-                fill
-                sizes="(max-width: 1023px) 100vw, 60vw"
-                style={{ objectFit: "cover" }}
-              />
-            </div>
-          </Reveal>
+          {HAS_STUDIO_PHOTO && (
+            <Reveal className="practical__media">
+              <div style={{ position: "relative", width: "100%", height: "100%" }}>
+                <Image
+                  src="/images/practical/studio.jpg"
+                  alt={p.mediaAlt}
+                  fill
+                  sizes="(max-width: 1023px) 100vw, 60vw"
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+            </Reveal>
+          )}
         </div>
       </div>
     </section>
