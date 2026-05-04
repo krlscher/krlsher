@@ -45,16 +45,18 @@ export const copyEN: Copy = {
     ],
   },
   stats: [
-    { num: "200+", label: "Cases planned" },
-    { num: "8", label: "Years in dentistry" },
-    { num: "4", label: "Countries trained in" },
-    { num: "24h", label: "Response time" },
+    { num: "90+", label: "Full rehabilitations completed" },
+    { num: "800+", label: "Implants placed" },
+    { num: "2400+", label: "Digitally planned cases" },
+    { num: "76%", label: "Patients by referral" },
   ],
   cases: {
     eyebrow: "CLINICAL CASES",
     h2: "Selected work, structured.",
     all: "More on Instagram",
     viewFull: "More on Instagram",
+    disclaimer:
+      "Cases are published without faces. Patients have consented to publication. Materials may be replaced on request.",
     blockLabels: {
       patient: "The patient",
       decision: "The decision",

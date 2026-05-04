@@ -5,9 +5,9 @@
 // Telegram and Instagram are usernames without "@".
 
 export const CONTACT = {
-  whatsappPhone: process.env.NEXT_PUBLIC_WHATSAPP_PHONE || "380000000000",
-  telegramHandle: process.env.NEXT_PUBLIC_TELEGRAM_HANDLE || "drscherbakov",
-  instagramHandle: process.env.NEXT_PUBLIC_INSTAGRAM_HANDLE || "drscherbakov",
+  whatsappPhone: process.env.NEXT_PUBLIC_WHATSAPP_PHONE || "380505352598",
+  telegramHandle: process.env.NEXT_PUBLIC_TELEGRAM_HANDLE || "kirscher",
+  instagramHandle: process.env.NEXT_PUBLIC_INSTAGRAM_HANDLE || "krl.schr",
 } as const;
 
 export const whatsappUrl = `https://wa.me/${CONTACT.whatsappPhone}`;

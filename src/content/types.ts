@@ -34,6 +34,7 @@ export type Copy = {
     h2: string;
     all: string;
     viewFull: string;
+    disclaimer: string;
     blockLabels: { patient: string; decision: string; outcome: string };
   };
   process: { eyebrow: string; h2: string; steps: ProcessStep[] };

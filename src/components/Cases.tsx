@@ -18,6 +18,7 @@ export function Cases({ lang }: Props) {
         <Reveal className="section__header">
           <EyebrowRule>{c.eyebrow}</EyebrowRule>
           <h2 className="t-h2">{c.h2}</h2>
+          <p className="t-caption cases__disclaimer">{c.disclaimer}</p>
         </Reveal>
         {cases
           .slice()
