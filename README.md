@@ -45,6 +45,9 @@ Copy `.env.example` to `.env.local` for local dev, set the same values in Vercel
 | `TELEGRAM_CHAT_ID`             | Target chat for the bot                       |
 | `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` | If set, injects the Plausible script in prod  |
 | `NEXT_PUBLIC_META_PIXEL_ID`    | If set, injects the Meta Pixel + tracks `Lead` on form submit |
+| `NEXT_PUBLIC_WHATSAPP_PHONE`   | WhatsApp number, intl format, digits only (no "+") |
+| `NEXT_PUBLIC_TELEGRAM_HANDLE`  | Telegram username, no "@"                     |
+| `NEXT_PUBLIC_INSTAGRAM_HANDLE` | Instagram username, no "@"                    |
 
 ## Asset drop locations
 
