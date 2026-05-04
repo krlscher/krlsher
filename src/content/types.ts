@@ -21,6 +21,12 @@ export type Copy = {
     footerLine: string;
     portraitAlt: string;
   };
+  about: {
+    eyebrow: string;
+    name: string;
+    role: string;
+    paragraphs: string[];
+  };
   approach: {
     eyebrow: string;
     h2: string;

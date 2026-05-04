@@ -458,7 +458,7 @@ a { color: inherit; text-decoration: none; }
 }
 .case-card__stage {
   position: relative;
-  aspect-ratio: 4/3;
+  aspect-ratio: 16/10;
   overflow: hidden;
   background: #1d1d1a;
 }
@@ -475,6 +475,37 @@ a { color: inherit; text-decoration: none; }
 .footer__col--center { text-align: center; }
 .footer__col--right { text-align: right; }
 .footer__col--center ul, .footer__col--right ul { align-items: inherit; }
+
+/* ==========================================================================
+   About
+   ========================================================================== */
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+.about__name { letter-spacing: -0.015em; }
+.about__role {
+  margin: var(--space-3) 0 0 0;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.about__body { display: flex; flex-direction: column; gap: var(--space-4); max-width: 620px; }
+.about__paragraph {
+  font-family: var(--font-serif);
+  font-size: 21px;
+  line-height: 1.6;
+  margin: 0;
+  color: var(--text);
+}
+
+@media (max-width: 1023px) {
+  .about__grid { grid-template-columns: 1fr; gap: var(--space-6); }
+  .about__paragraph { font-size: 19px; }
+}
 
 /* ==========================================================================
    Approach
@@ -570,14 +601,14 @@ a { color: inherit; text-decoration: none; }
 
 .case-card {
   display: grid;
-  grid-template-columns: 7fr 1fr 4fr;
+  grid-template-columns: 6fr 1fr 5fr;
   align-items: start;
   margin-bottom: var(--space-9);
 }
 .case-card:last-of-type { margin-bottom: 0; }
 .case-card__media {
   position: relative;
-  aspect-ratio: 4/3;
+  aspect-ratio: 16/10;
   overflow: hidden;
 }
 .case-card__body { grid-column: 3; align-self: center; }
@@ -599,7 +630,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--text-muted);
   margin: 0;
 }
-.case-card--reversed { grid-template-columns: 4fr 1fr 7fr; }
+.case-card--reversed { grid-template-columns: 5fr 1fr 6fr; }
 .case-card--reversed .case-card__body { grid-column: 1; }
 
 @media (max-width: 1023px) {

@@ -1,6 +1,7 @@
 import { Nav } from "./Nav";
 import { HtmlLang } from "./HtmlLang";
 import { Hero } from "./Hero";
+import { About } from "./About";
 import { Approach } from "./Approach";
 import { Stats } from "./Stats";
 import { Cases } from "./Cases";
@@ -18,6 +19,7 @@ export function Landing({ lang }: { lang: Lang }) {
       <Nav lang={lang} />
       <main>
         <Hero lang={lang} />
+        <About lang={lang} />
         <Approach lang={lang} />
         <Stats lang={lang} />
         <Cases lang={lang} />

@@ -21,6 +21,16 @@ export const copyEN: Copy = {
     footerLine: "DNIPRO · BY APPOINTMENT",
     portraitAlt: "Portrait of dr. Scherbakov",
   },
+  about: {
+    eyebrow: "ABOUT",
+    name: "Kyrylo Scherbakov",
+    role: "Dentist · Implantologist · Prosthodontist",
+    paragraphs: [
+      "I take on complex cases — full-mouth rehabilitation, implants, prosthetics, extractions. Every patient story begins with diagnostics and a plan.",
+      "The goal is aesthetic, stable results that hold for decades — not until the next check-up, not for a season.",
+      "Outside the practice — regular sport. It keeps focus sharp and gives the day a switch-off point.",
+    ],
+  },
   approach: {
     eyebrow: "APPROACH",
     h2: "Treatment doesn't begin in the chair.\nIt begins with diagnostics.",
