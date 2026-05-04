@@ -602,6 +602,7 @@ a { color: inherit; text-decoration: none; }
 .case-card {
   display: grid;
   grid-template-columns: 6fr 1fr 5fr;
+  grid-auto-flow: dense;
   align-items: start;
   margin-bottom: var(--space-9);
 }
