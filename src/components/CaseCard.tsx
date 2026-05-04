@@ -13,6 +13,14 @@ type Props = {
 
 export function CaseCard({ record, reversed, lang }: Props) {
   const copy = getCopy(lang);
+  const heroAlt = localized(record.heroImageAlt, lang);
+  const gallery = [
+    { src: record.heroImage, alt: heroAlt },
+    ...record.stages.map((stage) => ({
+      src: stage.src,
+      alt: localized(stage.alt, lang),
+    })),
+  ];
 
   return (
     <Reveal className={"case-card" + (reversed ? " case-card--reversed" : "")}>
@@ -20,8 +28,10 @@ export function CaseCard({ record, reversed, lang }: Props) {
         <div className="case-card__media">
           <ImageZoom
             src={record.heroImage}
-            alt={localized(record.heroImageAlt, lang)}
+            alt={heroAlt}
             sizes="(max-width: 1023px) 100vw, 60vw"
+            set={gallery}
+            setIndex={0}
           />
         </div>
         {record.stages.length > 0 && (
@@ -29,12 +39,14 @@ export function CaseCard({ record, reversed, lang }: Props) {
             className="case-card__stages"
             style={{ gridTemplateColumns: `repeat(${record.stages.length}, 1fr)` }}
           >
-            {record.stages.map((stage) => (
+            {record.stages.map((stage, idx) => (
               <div key={stage.src} className="case-card__stage">
                 <ImageZoom
                   src={stage.src}
                   alt={localized(stage.alt, lang)}
                   sizes="(max-width: 1023px) 25vw, 15vw"
+                  set={gallery}
+                  setIndex={idx + 1}
                 />
               </div>
             ))}
