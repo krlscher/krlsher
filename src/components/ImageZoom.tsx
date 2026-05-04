@@ -24,6 +24,8 @@ export function ImageZoom({ src, alt, sizes, priority, fadeIn = true, set, setIn
   const initialIndex = set ? setIndex : 0;
   const [open, setOpen] = useState(false);
   const [current, setCurrent] = useState(initialIndex);
+  const [thumbLoaded, setThumbLoaded] = useState(false);
+  const [lightboxLoaded, setLightboxLoaded] = useState(false);
   const touchStartX = useRef<number | null>(null);
 
   const close = useCallback(() => setOpen(false), []);
@@ -40,6 +42,10 @@ export function ImageZoom({ src, alt, sizes, priority, fadeIn = true, set, setIn
     if (!open) return;
     setCurrent(initialIndex);
   }, [open, initialIndex]);
+
+  useEffect(() => {
+    setLightboxLoaded(false);
+  }, [current, open]);
 
   useEffect(() => {
     if (!open) return;
@@ -80,6 +86,7 @@ export function ImageZoom({ src, alt, sizes, priority, fadeIn = true, set, setIn
         onClick={() => setOpen(true)}
         aria-label={alt}
       >
+        <span className={"image-skeleton" + (thumbLoaded ? " is-loaded" : "")} aria-hidden />
         <Image
           src={src}
           alt={alt}
@@ -87,6 +94,7 @@ export function ImageZoom({ src, alt, sizes, priority, fadeIn = true, set, setIn
           sizes={sizes}
           priority={priority}
           style={{ objectFit: "cover" }}
+          onLoad={() => setThumbLoaded(true)}
         />
       </button>
       {open && (
@@ -140,6 +148,10 @@ export function ImageZoom({ src, alt, sizes, priority, fadeIn = true, set, setIn
             </>
           )}
           <div key={item.src} className="lightbox__inner">
+            <span
+              className={"image-skeleton image-skeleton--dark" + (lightboxLoaded ? " is-loaded" : "")}
+              aria-hidden
+            />
             <Image
               src={item.src}
               alt={item.alt}
@@ -147,6 +159,7 @@ export function ImageZoom({ src, alt, sizes, priority, fadeIn = true, set, setIn
               sizes="92vw"
               className="lightbox__img"
               style={{ objectFit: "contain" }}
+              onLoad={() => setLightboxLoaded(true)}
             />
           </div>
         </div>

@@ -1079,6 +1079,43 @@ a { color: inherit; text-decoration: none; }
 .footer__lang span { color: var(--text-soft); }
 
 /* ==========================================================================
+   Image skeleton (loading shimmer)
+   ========================================================================== */
+
+.image-skeleton {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(120, 120, 120, 0.12);
+  background-image: linear-gradient(
+    100deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.18) 50%,
+    transparent 70%
+  );
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+  animation: image-skeleton-shimmer 1400ms ease-in-out infinite;
+  transition: opacity 320ms ease;
+  pointer-events: none;
+  z-index: 0;
+}
+.image-skeleton--dark {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+.image-skeleton.is-loaded {
+  opacity: 0;
+  animation: none;
+}
+@keyframes image-skeleton-shimmer {
+  0%   { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .image-skeleton { animation: none; }
+}
+
+/* ==========================================================================
    Image zoom (lightbox)
    ========================================================================== */
 
