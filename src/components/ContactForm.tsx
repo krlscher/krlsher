@@ -17,8 +17,11 @@ export function ContactForm({ lang }: Props) {
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (status === "submitting") return;
+    // React nulls e.currentTarget once the handler returns synchronously,
+    // so capture the form element before awaiting.
+    const form = e.currentTarget;
     setStatus("submitting");
-    const fd = new FormData(e.currentTarget);
+    const fd = new FormData(form);
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -32,8 +35,8 @@ export function ContactForm({ lang }: Props) {
       });
       if (!res.ok) throw new Error("Bad response");
       trackLead({ content_name: "consultation_form", lang });
+      form.reset();
       setStatus("success");
-      e.currentTarget.reset();
     } catch {
       setStatus("error");
     }
