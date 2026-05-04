@@ -109,7 +109,7 @@ export const copyEN: Copy = {
     address: "Dnipro, Ukraine\nBy appointment",
     linksLabel: "NAVIGATION",
     contactLabel: "CONTACT",
-    bottomLeft: "© 2026 — License №XXXXX",
+    bottomLeft: "© 2026",
     bottomRight: "UA · EN",
   },
 };
