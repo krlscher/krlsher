@@ -44,6 +44,7 @@ Copy `.env.example` to `.env.local` for local dev, set the same values in Vercel
 | `TELEGRAM_BOT_TOKEN`           | Bot used to ping the doctor on new requests   |
 | `TELEGRAM_CHAT_ID`             | Target chat for the bot                       |
 | `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` | If set, injects the Plausible script in prod  |
+| `NEXT_PUBLIC_META_PIXEL_ID`    | If set, injects the Meta Pixel + tracks `Lead` on form submit |
 
 ## Asset drop locations
 

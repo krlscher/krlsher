@@ -4,6 +4,7 @@ import Script from "next/script";
 import "@/styles/globals.css";
 import { SITE } from "@/lib/site";
 import { ThemeScript } from "@/components/ThemeScript";
+import { MetaPixel } from "@/components/MetaPixel";
 
 const inter = Inter({
   subsets: ["latin", "cyrillic", "latin-ext"],
@@ -57,6 +58,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const plausibleDomain = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN;
+  const metaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID;
   return (
     <html
       lang="uk"
@@ -75,6 +77,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             strategy="afterInteractive"
           />
         ) : null}
+        {metaPixelId ? <MetaPixel pixelId={metaPixelId} /> : null}
       </body>
     </html>
   );

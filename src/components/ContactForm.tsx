@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Arrow } from "./Arrow";
 import type { Lang } from "@/content/types";
 import { getCopy } from "@/lib/i18n";
+import { trackLead } from "@/lib/analytics";
 
 type Props = { lang: Lang };
 
@@ -30,6 +31,7 @@ export function ContactForm({ lang }: Props) {
         }),
       });
       if (!res.ok) throw new Error("Bad response");
+      trackLead({ content_name: "consultation_form", lang });
       setStatus("success");
       e.currentTarget.reset();
     } catch {
