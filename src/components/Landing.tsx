@@ -10,6 +10,7 @@ import { FAQ } from "./FAQ";
 import { Practical } from "./Practical";
 import { FinalCTA } from "./FinalCTA";
 import { Footer } from "./Footer";
+import { StickyMobileCTA } from "./StickyMobileCTA";
 import type { Lang } from "@/content/types";
 
 export function Landing({ lang }: { lang: Lang }) {
@@ -29,6 +30,7 @@ export function Landing({ lang }: { lang: Lang }) {
         <FinalCTA lang={lang} />
       </main>
       <Footer lang={lang} />
+      <StickyMobileCTA lang={lang} />
     </>
   );
 }

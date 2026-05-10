@@ -1,7 +1,7 @@
 import { Arrow } from "./Arrow";
 import { Reveal } from "./Reveal";
 import { getCopy } from "@/lib/i18n";
-import { whatsappUrl } from "@/lib/contact";
+import { telegramUrl } from "@/lib/contact";
 import type { Lang } from "@/content/types";
 
 type Props = { lang: Lang };
@@ -18,7 +18,7 @@ export function FinalCTA({ lang }: Props) {
             <hr className="eyebrow-rule" style={{ margin: 0 }} />
             <h2 className="t-h2">{c.h2}</h2>
             <a
-              href={whatsappUrl}
+              href={telegramUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn--primary btn--lg"
