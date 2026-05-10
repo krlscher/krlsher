@@ -1,0 +1,74 @@
+{
+  "/images/approach/cbct.jpg": {
+    "w": 1799,
+    "h": 932
+  },
+  "/images/cases/ceramic-veneers/hero.jpg": {
+    "w": 2800,
+    "h": 1375
+  },
+  "/images/cases/ceramic-veneers/stage-1.jpg": {
+    "w": 1252,
+    "h": 479
+  },
+  "/images/cases/ceramic-veneers/stage-2.jpg": {
+    "w": 2000,
+    "h": 1333
+  },
+  "/images/cases/full-arch-implants/hero.jpg": {
+    "w": 1538,
+    "h": 752
+  },
+  "/images/cases/full-arch-implants/stage-1.jpg": {
+    "w": 2000,
+    "h": 1333
+  },
+  "/images/cases/full-arch-implants/stage-2.jpg": {
+    "w": 2000,
+    "h": 1336
+  },
+  "/images/cases/full-arch-implants/stage-3.jpg": {
+    "w": 2000,
+    "h": 959
+  },
+  "/images/cases/full-arch-implants/stage-4.jpg": {
+    "w": 2000,
+    "h": 959
+  },
+  "/images/cases/posterior-implants/hero.jpg": {
+    "w": 2800,
+    "h": 1319
+  },
+  "/images/cases/posterior-implants/stage-1.jpg": {
+    "w": 1703,
+    "h": 2602
+  },
+  "/images/cases/posterior-implants/stage-2.jpg": {
+    "w": 2000,
+    "h": 1195
+  },
+  "/images/cases/posterior-implants/stage-3.jpg": {
+    "w": 2000,
+    "h": 1149
+  },
+  "/images/cases/smile-rehab/hero.jpg": {
+    "w": 2800,
+    "h": 1867
+  },
+  "/images/cases/smile-rehab/stage-1.jpg": {
+    "w": 2000,
+    "h": 1333
+  },
+  "/images/cases/smile-rehab/stage-2.jpg": {
+    "w": 2000,
+    "h": 1177
+  },
+  "/images/cases/smile-rehab/stage-3.jpg": {
+    "w": 2000,
+    "h": 1333
+  },
+  "/images/hero/portrait.jpg": {
+    "w": 2000,
+    "h": 3000
+  }
+}
