@@ -26,6 +26,7 @@ export function Hero({ lang }: Props) {
             <p className="t-lead hero__lead hero-stagger s3">{h.lead}</p>
             <div className="hero__cta hero-stagger s4">
               <a
+                id="hero-cta"
                 href={telegramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
