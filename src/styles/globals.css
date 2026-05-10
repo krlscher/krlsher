@@ -370,6 +370,9 @@ a { color: inherit; text-decoration: none; }
   padding: var(--space-3) 0;
   border-bottom: 1px solid var(--hairline);
 }
+.nav-drawer__theme { margin-top: var(--space-4); gap: var(--space-2); }
+.nav-drawer__theme button { padding: 10px; }
+.nav-drawer__theme svg { width: 20px; height: 20px; }
 
 /* ==========================================================================
    Hero

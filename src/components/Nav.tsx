@@ -51,7 +51,6 @@ export function Nav({ lang }: Props) {
             ))}
           </ul>
           <div className="nav__right">
-            <ThemeToggle lang={lang} />
             <LangSwitch lang={lang} />
             <button
               className="nav__hamburger"
@@ -71,6 +70,7 @@ export function Nav({ lang }: Props) {
             {l.label}
           </a>
         ))}
+        <ThemeToggle lang={lang} className="theme-toggle nav-drawer__theme" />
       </div>
     </>
   );
