@@ -370,6 +370,9 @@ a { color: inherit; text-decoration: none; }
   padding: var(--space-3) 0;
   border-bottom: 1px solid var(--hairline);
 }
+.nav-drawer__theme { margin-top: var(--space-4); gap: var(--space-2); }
+.nav-drawer__theme button { padding: 10px; }
+.nav-drawer__theme svg { width: 20px; height: 20px; }
 
 /* ==========================================================================
    Hero
@@ -1275,5 +1278,35 @@ a { color: inherit; text-decoration: none; }
   .image-zoom:focus-visible img { transition: none; transform: none; }
   .lightbox,
   .lightbox__inner { animation: none; }
+}
+
+/* ==========================================================================
+   Sticky mobile booking CTA
+   ========================================================================== */
+
+.sticky-cta { display: none; }
+
+@media (max-width: 1023px) {
+  .sticky-cta {
+    display: block;
+    position: fixed;
+    left: var(--side-margin);
+    right: var(--side-margin);
+    bottom: max(var(--space-4), calc(var(--space-3) + env(safe-area-inset-bottom)));
+    z-index: 48;
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+    transition: opacity 200ms ease, transform 200ms ease;
+  }
+  .sticky-cta.is-visible {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+  .sticky-cta__btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
 

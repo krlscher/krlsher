@@ -894,3 +894,27 @@ a { color: inherit; text-decoration: none; }
    ========================================================================== */
 
 .tweaks-toggle-pad { height: 0; }
+
+/* ==========================================================================
+   Sticky mobile booking CTA
+   ========================================================================== */
+
+.sticky-cta { display: none; }
+
+@media (max-width: 1023px) {
+  .sticky-cta {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 48;
+    padding: var(--space-3) var(--side-margin)
+             calc(var(--space-3) + env(safe-area-inset-bottom));
+    background: rgba(250, 250, 247, 0.92);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid var(--hairline);
+  }
+  .sticky-cta__btn { width: 100%; justify-content: center; }
+  body { padding-bottom: 88px; }
+}
