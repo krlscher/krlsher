@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Arrow } from "./Arrow";
 import { getCopy } from "@/lib/i18n";
-import { whatsappUrl } from "@/lib/contact";
+import { telegramUrl } from "@/lib/contact";
 import type { Lang } from "@/content/types";
 
 type Props = { lang: Lang };
@@ -26,7 +26,7 @@ export function Hero({ lang }: Props) {
             <p className="t-lead hero__lead hero-stagger s3">{h.lead}</p>
             <div className="hero__cta hero-stagger s4">
               <a
-                href={whatsappUrl}
+                href={telegramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn--primary"
