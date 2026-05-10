@@ -14,7 +14,6 @@
   "dependencies": {
     "next": "^15.1.6",
     "photoswipe": "^5.4.4",
-    "photoswipe-video-plugin": "^1.0.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-photoswipe-gallery": "^4.0.0",
