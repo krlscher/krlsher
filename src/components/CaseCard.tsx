@@ -1,6 +1,7 @@
 import { Arrow } from "./Arrow";
 import { Reveal } from "./Reveal";
 import { ImageZoom } from "./ImageZoom";
+import { VideoZoom } from "./VideoZoom";
 import { GalleryRoot } from "./GalleryRoot";
 import { getCopy, localized } from "@/lib/i18n";
 import { instagramUrl } from "@/lib/contact";
@@ -32,15 +33,27 @@ export function CaseCard({ record, reversed, lang }: Props) {
               className="case-card__stages"
               style={{ gridTemplateColumns: `repeat(${record.stages.length}, 1fr)` }}
             >
-              {record.stages.map((stage) => (
-                <div key={stage.src} className="case-card__stage">
-                  <ImageZoom
-                    src={stage.src}
-                    alt={localized(stage.alt, lang)}
-                    sizes="(max-width: 1023px) 25vw, 15vw"
-                  />
-                </div>
-              ))}
+              {record.stages.map((stage) => {
+                const stageAlt = localized(stage.alt, lang);
+                return (
+                  <div key={stage.src} className="case-card__stage">
+                    {stage.type === "video" ? (
+                      <VideoZoom
+                        src={stage.src}
+                        poster={stage.poster}
+                        alt={stageAlt}
+                        sizes="(max-width: 1023px) 25vw, 15vw"
+                      />
+                    ) : (
+                      <ImageZoom
+                        src={stage.src}
+                        alt={stageAlt}
+                        sizes="(max-width: 1023px) 25vw, 15vw"
+                      />
+                    )}
+                  </div>
+                );
+              })}
             </div>
           )}
         </div>
