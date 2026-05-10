@@ -1,6 +1,7 @@
 import { Arrow } from "./Arrow";
 import { Reveal } from "./Reveal";
 import { ImageZoom } from "./ImageZoom";
+import { GalleryRoot } from "./GalleryRoot";
 import { getCopy, localized } from "@/lib/i18n";
 import { instagramUrl } from "@/lib/contact";
 import type { CaseRecord, Lang } from "@/content/types";
@@ -14,45 +15,36 @@ type Props = {
 export function CaseCard({ record, reversed, lang }: Props) {
   const copy = getCopy(lang);
   const heroAlt = localized(record.heroImageAlt, lang);
-  const gallery = [
-    { src: record.heroImage, alt: heroAlt },
-    ...record.stages.map((stage) => ({
-      src: stage.src,
-      alt: localized(stage.alt, lang),
-    })),
-  ];
 
   return (
     <Reveal className={"case-card" + (reversed ? " case-card--reversed" : "")}>
-      <div className="case-card__media-col">
-        <div className="case-card__media">
-          <ImageZoom
-            src={record.heroImage}
-            alt={heroAlt}
-            sizes="(max-width: 1023px) 100vw, 60vw"
-            set={gallery}
-            setIndex={0}
-          />
-        </div>
-        {record.stages.length > 0 && (
-          <div
-            className="case-card__stages"
-            style={{ gridTemplateColumns: `repeat(${record.stages.length}, 1fr)` }}
-          >
-            {record.stages.map((stage, idx) => (
-              <div key={stage.src} className="case-card__stage">
-                <ImageZoom
-                  src={stage.src}
-                  alt={localized(stage.alt, lang)}
-                  sizes="(max-width: 1023px) 25vw, 15vw"
-                  set={gallery}
-                  setIndex={idx + 1}
-                />
-              </div>
-            ))}
+      <GalleryRoot id={`case-${record.slug}`}>
+        <div className="case-card__media-col">
+          <div className="case-card__media">
+            <ImageZoom
+              src={record.heroImage}
+              alt={heroAlt}
+              sizes="(max-width: 1023px) 100vw, 60vw"
+            />
           </div>
-        )}
-      </div>
+          {record.stages.length > 0 && (
+            <div
+              className="case-card__stages"
+              style={{ gridTemplateColumns: `repeat(${record.stages.length}, 1fr)` }}
+            >
+              {record.stages.map((stage) => (
+                <div key={stage.src} className="case-card__stage">
+                  <ImageZoom
+                    src={stage.src}
+                    alt={localized(stage.alt, lang)}
+                    sizes="(max-width: 1023px) 25vw, 15vw"
+                  />
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </GalleryRoot>
       <div className="case-card__body">
         <div className="t-eyebrow case-card__tag">{localized(record.tag, lang)}</div>
         <h3 className="t-h3 case-card__title">{localized(record.title, lang)}</h3>

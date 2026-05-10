@@ -1,9 +1,9 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
-
-type ZoomItem = { src: string; alt: string };
+import { Item } from "react-photoswipe-gallery";
+import { imageSize } from "@/lib/imageSize";
 
 type Props = {
   src: string;
@@ -11,159 +11,35 @@ type Props = {
   sizes?: string;
   priority?: boolean;
   fadeIn?: boolean;
-  /** Full set this thumbnail belongs to. When omitted, the lightbox shows just [{src, alt}]. */
-  set?: ZoomItem[];
-  /** This thumbnail's index inside `set`. Required when `set` is provided. */
-  setIndex?: number;
+  caption?: string;
 };
 
-const SWIPE_THRESHOLD = 50;
-
-export function ImageZoom({ src, alt, sizes, priority, fadeIn = true, set, setIndex = 0 }: Props) {
-  const items: ZoomItem[] = set && set.length > 0 ? set : [{ src, alt }];
-  const initialIndex = set ? setIndex : 0;
-  const [open, setOpen] = useState(false);
-  const [current, setCurrent] = useState(initialIndex);
+export function ImageZoom({ src, alt, sizes, priority, fadeIn = true, caption }: Props) {
   const [thumbLoaded, setThumbLoaded] = useState(false);
-  const [lightboxLoaded, setLightboxLoaded] = useState(false);
-  const touchStartX = useRef<number | null>(null);
-
-  const close = useCallback(() => setOpen(false), []);
-  const next = useCallback(
-    () => setCurrent((i) => (i + 1) % items.length),
-    [items.length],
-  );
-  const prev = useCallback(
-    () => setCurrent((i) => (i - 1 + items.length) % items.length),
-    [items.length],
-  );
-
-  useEffect(() => {
-    if (!open) return;
-    setCurrent(initialIndex);
-  }, [open, initialIndex]);
-
-  useEffect(() => {
-    setLightboxLoaded(false);
-  }, [current, open]);
-
-  useEffect(() => {
-    if (!open) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") close();
-      else if (e.key === "ArrowRight" && items.length > 1) next();
-      else if (e.key === "ArrowLeft" && items.length > 1) prev();
-    };
-    document.addEventListener("keydown", onKey);
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = prevOverflow;
-    };
-  }, [open, close, next, prev, items.length]);
-
-  const onTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0]?.clientX ?? null;
-  };
-  const onTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartX.current == null || items.length < 2) return;
-    const dx = (e.changedTouches[0]?.clientX ?? touchStartX.current) - touchStartX.current;
-    touchStartX.current = null;
-    if (Math.abs(dx) < SWIPE_THRESHOLD) return;
-    if (dx < 0) next();
-    else prev();
-  };
-
-  const item = items[current];
-  const showNav = items.length > 1;
+  const { w, h } = imageSize(src);
 
   return (
-    <>
-      <button
-        type="button"
-        className={"image-zoom" + (fadeIn ? " image-zoom--fade" : "")}
-        onClick={() => setOpen(true)}
-        aria-label={alt}
-      >
-        <span className={"image-skeleton" + (thumbLoaded ? " is-loaded" : "")} aria-hidden />
-        <Image
-          src={src}
-          alt={alt}
-          fill
-          sizes={sizes}
-          priority={priority}
-          style={{ objectFit: "cover" }}
-          onLoad={() => setThumbLoaded(true)}
-        />
-      </button>
-      {open && (
-        <div
-          className="lightbox"
-          role="dialog"
-          aria-modal="true"
-          aria-label={item.alt}
-          onClick={close}
-          onTouchStart={onTouchStart}
-          onTouchEnd={onTouchEnd}
+    <Item original={src} thumbnail={src} width={w} height={h} alt={alt} caption={caption ?? alt}>
+      {({ ref, open }) => (
+        <button
+          ref={ref as React.Ref<HTMLButtonElement>}
+          type="button"
+          className={"image-zoom" + (fadeIn ? " image-zoom--fade" : "")}
+          onClick={open}
+          aria-label={alt}
         >
-          <button
-            type="button"
-            className="lightbox__close"
-            onClick={(e) => {
-              e.stopPropagation();
-              close();
-            }}
-            aria-label="Close"
-          >
-            ×
-          </button>
-          {showNav && (
-            <>
-              <button
-                type="button"
-                className="lightbox__nav lightbox__nav--prev"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  prev();
-                }}
-                aria-label="Previous image"
-              >
-                ‹
-              </button>
-              <button
-                type="button"
-                className="lightbox__nav lightbox__nav--next"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  next();
-                }}
-                aria-label="Next image"
-              >
-                ›
-              </button>
-              <div className="lightbox__counter" aria-live="polite">
-                {current + 1} / {items.length}
-              </div>
-            </>
-          )}
-          <div key={item.src} className="lightbox__inner">
-            <span
-              className={"image-skeleton image-skeleton--dark" + (lightboxLoaded ? " is-loaded" : "")}
-              aria-hidden
-            />
-            <Image
-              src={item.src}
-              alt={item.alt}
-              fill
-              sizes="92vw"
-              className="lightbox__img"
-              style={{ objectFit: "contain" }}
-              onLoad={() => setLightboxLoaded(true)}
-            />
-          </div>
-        </div>
+          <span className={"image-skeleton" + (thumbLoaded ? " is-loaded" : "")} aria-hidden />
+          <Image
+            src={src}
+            alt={alt}
+            fill
+            sizes={sizes}
+            priority={priority}
+            style={{ objectFit: "cover" }}
+            onLoad={() => setThumbLoaded(true)}
+          />
+        </button>
       )}
-    </>
+    </Item>
   );
 }

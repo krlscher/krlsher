@@ -1,6 +1,7 @@
 import { EyebrowRule } from "./EyebrowRule";
 import { Reveal } from "./Reveal";
 import { ImageZoom } from "./ImageZoom";
+import { GalleryRoot } from "./GalleryRoot";
 import { getCopy } from "@/lib/i18n";
 import type { Lang } from "@/content/types";
 
@@ -14,11 +15,13 @@ export function Approach({ lang }: Props) {
       <div className="container">
         <div className="approach__grid">
           <Reveal className="approach__media">
-            <ImageZoom
-              src="/images/approach/cbct.jpg"
-              alt={a.mediaAlt}
-              sizes="(max-width: 1023px) 100vw, 50vw"
-            />
+            <GalleryRoot id="approach">
+              <ImageZoom
+                src="/images/approach/cbct.jpg"
+                alt={a.mediaAlt}
+                sizes="(max-width: 1023px) 100vw, 50vw"
+              />
+            </GalleryRoot>
           </Reveal>
           <div>
             <Reveal>
