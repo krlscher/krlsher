@@ -31,18 +31,22 @@ export const cases: CaseRecord[] = [
     },
     stages: [
       {
+        type: "image",
         src: "/images/cases/full-arch-implants/stage-1.jpg",
         alt: { ua: "До лікування — старі мостоподібні конструкції", en: "Before treatment — old bridges in place" },
       },
       {
+        type: "image",
         src: "/images/cases/full-arch-implants/stage-2.jpg",
         alt: { ua: "Етап лікування — фрагмент 1", en: "Treatment stage — fragment 1" },
       },
       {
+        type: "image",
         src: "/images/cases/full-arch-implants/stage-3.jpg",
         alt: { ua: "Етап лікування — фрагмент 2", en: "Treatment stage — fragment 2" },
       },
       {
+        type: "image",
         src: "/images/cases/full-arch-implants/stage-4.jpg",
         alt: { ua: "Етап лікування — фрагмент 3", en: "Treatment stage — fragment 3" },
       },
@@ -78,10 +82,12 @@ export const cases: CaseRecord[] = [
     },
     stages: [
       {
+        type: "image",
         src: "/images/cases/ceramic-veneers/stage-1.jpg",
         alt: { ua: "До лікування — старі пломби у фронтальній ділянці", en: "Before treatment — old fillings in the anterior segment" },
       },
       {
+        type: "image",
         src: "/images/cases/ceramic-veneers/stage-2.jpg",
         alt: { ua: "Етап лікування — керамічні вініри після фіксації", en: "Treatment stage — ceramic veneers after bonding" },
       },
@@ -117,14 +123,17 @@ export const cases: CaseRecord[] = [
     },
     stages: [
       {
+        type: "image",
         src: "/images/cases/posterior-implants/stage-1.jpg",
         alt: { ua: "До лікування — відсутність жувальних зубів", en: "Before treatment — missing chewing teeth" },
       },
       {
+        type: "image",
         src: "/images/cases/posterior-implants/stage-2.jpg",
         alt: { ua: "Етап лікування — встановлені імпланти", en: "Treatment stage — implants placed" },
       },
       {
+        type: "image",
         src: "/images/cases/posterior-implants/stage-3.jpg",
         alt: { ua: "Етап лікування — фіксація коронок", en: "Treatment stage — crowns bonded" },
       },
@@ -160,14 +169,17 @@ export const cases: CaseRecord[] = [
     },
     stages: [
       {
+        type: "image",
         src: "/images/cases/smile-rehab/stage-1.jpg",
         alt: { ua: "До лікування — міжзубні проміжки у зоні усмішки", en: "Before treatment — interdental gaps in the smile zone" },
       },
       {
+        type: "image",
         src: "/images/cases/smile-rehab/stage-2.jpg",
         alt: { ua: "Етап лікування — примірка mock-up", en: "Treatment stage — mock-up try-in" },
       },
       {
+        type: "image",
         src: "/images/cases/smile-rehab/stage-3.jpg",
         alt: { ua: "Етап лікування — фіксація керамічних реставрацій", en: "Treatment stage — ceramic restorations bonded" },
       },
